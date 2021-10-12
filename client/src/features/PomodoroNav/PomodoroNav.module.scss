@@ -1,0 +1,16 @@
+@import "../../styles/Variables";
+
+div.container {
+  & > button {
+    box-shadow: none;
+
+    border: none;
+
+    color: $light-gray;
+  }
+
+  button[data-isactive="true"] {
+    // font-weight: bold;
+    color: $white;
+  }
+}

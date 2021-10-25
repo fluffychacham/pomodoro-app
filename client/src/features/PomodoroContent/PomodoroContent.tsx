@@ -1,7 +1,8 @@
 import { FunctionComponent } from "react";
 import { useSelector } from "react-redux";
-import { EPomodoroNav } from "../../stores/PomodoroNavSlice";
+import { IPomodoroNav, EPomodoroNav } from "../../stores/PomodoroNavSlice";
 import { RootState } from "../../stores/store";
+import { MainMenu } from "../MainMenu";
 
 import style from "./PomodoroContent.module.scss";
 
@@ -11,7 +12,9 @@ import style from "./PomodoroContent.module.scss";
  * @return Tsx
  */
 export const PomodoroContent: FunctionComponent = () => {
-  const selector = useSelector((state: RootState) => state.pomodoroNav.nav);
+  const selector = useSelector(
+    (state: RootState) => (state.pomodoroNav || ({} as IPomodoroNav))?.nav
+  );
   const displayCurrentNav = (currentNav: EPomodoroNav): string => {
     switch (currentNav) {
       case EPomodoroNav.SHORT_BREAK:
@@ -23,5 +26,10 @@ export const PomodoroContent: FunctionComponent = () => {
     }
   };
 
-  return <div className={style.container}>{displayCurrentNav(selector)}</div>;
+  return (
+    <div className={style.container}>
+      <MainMenu />
+      {displayCurrentNav(selector)}
+    </div>
+  );
 };

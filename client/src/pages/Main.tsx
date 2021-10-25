@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { Provider } from "react-redux";
-import { Route, Switch } from "react-router";
+import { Redirect, Route, Switch } from "react-router";
 import { LOGIN, POMODORO } from "../Paths";
 import { store } from "../stores/store";
 import { Login } from "./Login";
@@ -12,6 +12,7 @@ const Main: FunctionComponent = () => {
     <Provider store={store}>
       <div className={style.container}>
         <Switch>
+          <Redirect path="/" to={POMODORO} exact />
           <Route path={POMODORO} component={Pomodoro} />
           <Route path={LOGIN} component={Login} />
         </Switch>

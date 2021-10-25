@@ -1,7 +1,6 @@
 import { FunctionComponent } from "react";
 import { PomodoroContent } from "../../features/PomodoroContent";
 import { PomodoroHeader } from "../../features/PomodoroHeader";
-
 import style from "./Pomodoro.module.scss";
 
 /**

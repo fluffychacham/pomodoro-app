@@ -1,5 +1,3 @@
-import { UnorderedListOutlined } from "@ant-design/icons";
-import { Button } from "antd";
 import { FunctionComponent } from "react";
 
 import style from "./PomodoroTaskListButton.module.scss";
@@ -10,12 +8,5 @@ import style from "./PomodoroTaskListButton.module.scss";
  * @return Tsx
  */
 export const PomodoroTaskListButton: FunctionComponent = () => {
-  return (
-    <Button
-      type="primary"
-      style={{ backgroundColor: "transparent" }}
-      icon={<UnorderedListOutlined />}
-      className={style.container}
-    ></Button>
-  );
+  return <div>Pomodoro task list button</div>;
 };

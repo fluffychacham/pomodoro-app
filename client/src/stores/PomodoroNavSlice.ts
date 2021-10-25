@@ -6,11 +6,11 @@ export enum EPomodoroNav {
   LONG_BREAK,
 }
 
-export interface PomodoroNav {
+export interface IPomodoroNav {
   nav: EPomodoroNav;
 }
 
-export const initialState: PomodoroNav = {
+export const initialState: IPomodoroNav = {
   nav: EPomodoroNav.POMODORO,
 };
 

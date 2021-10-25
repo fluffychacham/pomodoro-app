@@ -1,4 +1,4 @@
-import moment from "moment";
+import { DateTime } from "luxon";
 import { FunctionComponent, useEffect, useState } from "react";
 
 import style from "./TimeDisplay.module.scss";
@@ -9,7 +9,8 @@ import style from "./TimeDisplay.module.scss";
  * @return Tsx
  */
 export const TimeDisplay: FunctionComponent = () => {
-  const getFormattedTime = () => moment().format("LTS");
+  const getFormattedTime = () =>
+    DateTime.now().toLocaleString(DateTime.TIME_SIMPLE);
   const [timeString, setTimeString] = useState(getFormattedTime());
 
   useEffect(() => {

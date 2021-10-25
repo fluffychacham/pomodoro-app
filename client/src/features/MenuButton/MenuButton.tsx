@@ -1,7 +1,6 @@
-import { Button } from "antd";
 import { FunctionComponent } from "react";
-import { MenuOutlined } from "@ant-design/icons";
-
+import { useDispatch } from "react-redux";
+import { toggle } from "../../stores/MenuSlice";
 import style from "./MenuButton.module.scss";
 
 /**
@@ -10,12 +9,11 @@ import style from "./MenuButton.module.scss";
  * @return Tsx
  */
 export const MenuButton: FunctionComponent = () => {
-  return (
-    <Button
-      type="primary"
-      style={{ backgroundColor: "transparent" }}
-      icon={<MenuOutlined />}
-      className={style.container}
-    ></Button>
-  );
+  const dispatch = useDispatch();
+
+  const handleMenuButtonClick = () => {
+    dispatch(toggle());
+  };
+
+  return <button>menu button</button>;
 };

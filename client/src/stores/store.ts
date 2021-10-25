@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { pomodoroReducer } from "../stores/PomodoroNavSlice";
+import { menuReducer } from "./MenuSlice";
+import { pomodoroReducer } from "./PomodoroNavSlice";
 
 export const store = configureStore({
   reducer: {
     pomodoroNav: pomodoroReducer,
+    menu: menuReducer,
   },
 });
 

@@ -1,0 +1,46 @@
+@import "../../styles/Variables";
+
+button.container {
+  background-color: transparent;
+  border: none;
+
+  padding: 0.5em 1em;
+  font-size: 1rem;
+
+  border-radius: 0.2em;
+
+  transition: all 0.3s ease;
+
+  color: $white;
+
+  &:hover {
+    cursor: pointer;
+
+    filter: brightness(110%);
+  }
+
+  // Button sizes
+  &[data-size="sm"] {
+    font-size: 0.9rem;
+  }
+
+  &[data-size="md"] {
+    font-size: 1.1rem;
+  }
+
+  &[data-size="lg"] {
+    font-size: 1.3rem;
+  }
+
+  // Button colors
+  &[data-color="primary"] {
+    background-color: $purple-navy;
+
+    color: $white;
+  }
+  &[data-color="danger"] {
+    background-color: $red;
+
+    color: $white;
+  }
+}

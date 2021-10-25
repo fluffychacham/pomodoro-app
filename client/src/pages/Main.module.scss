@@ -1,4 +1,8 @@
 @import "../styles/Variables";
 
 .container {
+  flex: 1 1 100%;
+  display: flex;
+
+  width: 100%;
 }

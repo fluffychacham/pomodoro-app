@@ -1,0 +1,40 @@
+li.task-list-list-item {
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+  display: grid;
+
+  div.task-list-list-footer {
+    grid-column-start: 2;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+
+    margin-top: 0.5rem;
+    padding-right: 0.5rem;
+
+    & > div {
+      align-self: flex-start;
+    }
+
+    & > *,
+    button {
+      transition: all 0.2s ease;
+
+      border: none;
+
+      opacity: 1;
+      color: rgba(grey, 0.5);
+
+      &:hover {
+        color: rgba(grey, 1);
+      }
+    }
+  }
+
+  &:hover {
+    div.task-list-input-number,
+    div.task-list-list-footer > * {
+      color: rgba(grey, 1);
+    }
+  }
+}

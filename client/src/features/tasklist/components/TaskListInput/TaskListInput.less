@@ -1,0 +1,11 @@
+@import "../../../../styles/theme.less";
+
+textarea.task-list-input {
+  padding-left: 0;
+  margin-left: 0.75rem;
+
+  &[data-done="true"] {
+    text-decoration: line-through;
+    color: rgba(black, 0.4);
+  }
+}

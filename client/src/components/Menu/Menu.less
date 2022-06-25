@@ -1,0 +1,51 @@
+@import "../../styles/theme.less";
+
+button.menu-button {
+  background-color: transparent;
+
+  border: none;
+  color: @text-color;
+
+  &:hover {
+    filter: brightness(1.1);
+    background-color: @primary-color;
+  }
+}
+
+div.ant-drawer-body {
+  button {
+    width: 100%;
+
+    background-color: transparent;
+
+    border: none;
+
+    text-align: start;
+
+    margin-bottom: 1rem;
+
+    &:hover {
+      background-color: rgba(gray, 0.1);
+    }
+
+    &[data-active="true"] {
+      background-color: rgba(gray, 0.1);
+      border-bottom: 1px solid @primary-color;
+    }
+  }
+}
+
+div.ant-drawer-footer {
+  button {
+    width: 100%;
+    background-color: transparent;
+
+    text-align: start;
+
+    border: none;
+
+    &:hover {
+      background-color: rgba(gray, 0.1);
+    }
+  }
+}

@@ -1,16 +1,28 @@
-import { Controller, Get } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Request,
+  Res,
+  UseGuards,
+} from "@nestjs/common";
+import { config } from "dotenv";
+import { Response } from "express";
 import { AppService } from "./app.service";
+import { JwtAuthGuard } from "./jwt-auth/jwt-auth.guard";
+import { JwtAuthService } from "./jwt-auth/jwt-auth.service";
+import { UserLoginDto } from "./user/user.dto";
 
-@Controller()
+config();
+
+@Controller("api")
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor() {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
-  @Get("/hello")
-  getHello2(): string {
-    return this.appService.getHello();
+  @UseGuards(JwtAuthGuard)
+  @Get("profile")
+  getProfile(@Request() req) {
+    return req.user;
   }
 }

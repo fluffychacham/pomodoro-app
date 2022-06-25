@@ -1,0 +1,19 @@
+@import "../../../../styles/theme.less";
+
+div.pomodoro-controls {
+  justify-content: center;
+  display: flex;
+  gap: 1rem;
+
+  button {
+    background-color: transparent;
+
+    border: none;
+    color: @text-color;
+
+    &:hover {
+      filter: brightness(1.1);
+      background-color: @primary-color;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+div.layout {
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+
+  main.layout-content {
+    padding: 1rem;
+
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    display: flex;
+
+    &[data-direction="column"] {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
